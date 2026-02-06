@@ -7,18 +7,18 @@
 
 import { StatusBar, Text, useColorScheme, View, StyleSheet } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { theme } from '@theme/index';
+import { COLORS } from '@theme/index';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? '#000' : theme.colors.background,
+    backgroundColor: isDarkMode ? '#000' : COLORS.background,
     flex: 1,
   };
 
   const textStyle = {
-    color: isDarkMode ? '#fff' : theme.colors.text,
+    color: isDarkMode ? '#fff' : COLORS.white,
   };
 
   const codeStyle = {

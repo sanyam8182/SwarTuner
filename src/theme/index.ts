@@ -1,21 +1,27 @@
-export const theme = {
-    colors: {
-        primary: '#FF9933', // Saffronish
-        secondary: '#138808', // Greenish
-        background: '#FFFFFF',
-        text: '#000000',
-        error: '#B00020',
-        success: '#4CAF50',
-        warning: '#FFC107',
-    },
-    spacing: {
-        s: 8,
-        m: 16,
-        l: 24,
-        xl: 32,
-    },
-    typography: {
-        h1: { fontSize: 32, fontWeight: 'bold' },
-        body: { fontSize: 16 },
-    },
+import * as Haptics from 'expo-haptics';
+
+export const COLORS = {
+    background: '#080808',
+    surface: 'rgba(255, 255, 255, 0.05)',
+    white: '#FFFFFF',
+    white10: 'rgba(255, 255, 255, 0.1)',
+    white60: 'rgba(255, 255, 255, 0.6)',
+    // Helper for glassmorphism
+    glass: 'rgba(255, 255, 255, 0.05)',
+};
+
+export const SPRING_CONFIG = {
+    damping: 10,
+    stiffness: 100,
+    mass: 1,
+    overshootClamping: false,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 2,
+};
+
+export const HAPTICS = {
+    selection: () => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light),
+    switch: () => Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium),
+    success: () => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success),
+    impact: (style: Haptics.ImpactFeedbackStyle) => Haptics.impactAsync(style),
 };
